@@ -1,0 +1,16 @@
+.wrapper {
+  width: 100%;
+  min-height: 650px;
+  background-color: black;
+}
+
+#target {
+  font-size: 80px;
+  font-family: monospace;
+  text-align: center;
+  color: lightgreen;
+
+  padding-top: 250px;
+}
+
+
