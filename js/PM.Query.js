@@ -21,4 +21,4 @@ PM.Query = (function(){
     addEventListenerByClass: addEventListenerByClass,
     removeClass: removeClass,
   };
-});
+})();
