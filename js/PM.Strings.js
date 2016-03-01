@@ -2,29 +2,34 @@ var PM = PM || {};
 
 PM.Strings = (function() {
 
-  function reverseStringWithMethods(str) {
-    var reversed = str.split("").reverse().join("");
-
-    return reversed;
-  }
-
-  function reverseStringWithLoop(str) {
-    var reversed_string = "";
-
-    for (var i = str.length - 1; i >= 0; i--) {
-      reversed_string = reverseString + str.charAt(i);
+  // Takes a string (sentence or paragraph)
+  // Returns string with all words capitalized
+  function letterCapitalize(str) { 
+    var words = str.split(" ");
+    var capitalized = "";
+    
+    for (var i = 0; i < words.length; i++) {
+      var word = words[i].toLowerCase();
+      var letters = word.split("");
+      var updated;
+      
+      letters[0] = letters[0].toUpperCase();
+      updated = letters.join("");
+      capitalized += updated + " ";
     }
-
-    return  reversed_string;
+    
+    capitalized.trim();
+    
+    return capitalized;      
   }
 
-  // take string argument
+  // NOT A USEFUL METHOD, JUST A TEST FROM Coderbyte //
+
+  function letterChanges(str) { 
     // if a lowercase letter, bump it up 1 (a to b, c to d, or z back to a)
     // if a vowel, make it uppercase
     // if some other char, leave it alone
-    // return the new string
 
-  function letterChanges(str) { 
     var new_string = "";
     
     for (var i = 0; i < str.length; i++) {
@@ -50,10 +55,29 @@ PM.Strings = (function() {
     return new_string;      
   }
 
+  // Simple String reversal function using built in JS methods
+  function reverseStringWithMethods(str) {
+    var reversed = str.split("").reverse().join("");
+
+    return reversed;
+  }
+
+  // Simple string reversal using a loop
+  function reverseStringWithLoop(str) {
+    var reversed_string = "";
+
+    for (var i = str.length - 1; i >= 0; i--) {
+      reversed_string = reverseString + str.charAt(i);
+    }
+
+    return  reversed_string;
+  }
+
   return {
-    reverseStringWithMethods: reverseStringWithMethods,
+    letterCapitalize: letterCapitalize,
+    letterChanges: letterChanges,
     reverseStringWithLoop: reverseStringWithLoop,
-    letterChanges: letterChanges
+    reverseStringWithMethods: reverseStringWithMethods
   };
 })();
 
