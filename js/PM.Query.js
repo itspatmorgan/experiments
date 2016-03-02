@@ -1,6 +1,6 @@
 var PM = PM || {};
 
-PM.Query = (function(){
+PM.Query = (function() {
   function addEventListenerByClass(className, event, func) {
     var classlist = document.getElementsByClassName(className);
 
@@ -19,6 +19,6 @@ PM.Query = (function(){
 
   return {
     addEventListenerByClass: addEventListenerByClass,
-    removeClass: removeClass,
+    removeClass: removeClass
   };
 })();

@@ -2,17 +2,6 @@ var PM = PM || {};
 
 PM.Maths = (function() {
 
-  // Add numbers from 1 up to num
-  function sumUpTo(num) { 
-    var sum = 0;
-    
-    for (var i = 1; i <= num; i ++) {
-      sum += i;
-    } 
-
-    return sum;      
-  }
-
   // Calculate factorial of num (no recursion)
   function simpleFactorial(num) {
     var product = 1;
@@ -24,9 +13,20 @@ PM.Maths = (function() {
     return product;
   }
 
+  // Add numbers from 1 up to num
+  function sumUpTo(num) { 
+    var sum = 0;
+    
+    for (var i = 1; i <= num; i ++) {
+      sum += i;
+    } 
+
+    return sum;      
+  }
+
   return {
-    sumUpTo: sumUpTo,
-    simpleFactorial: simpleFactorial
+    simpleFactorial: simpleFactorial,
+    sumUpTo: sumUpTo
   };
 })();
 

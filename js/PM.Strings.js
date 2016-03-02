@@ -2,6 +2,17 @@ var PM = PM || {};
 
 PM.Strings = (function() {
 
+  function isPalindrome(str) { 
+    var collapsed_str = str.replace(/[ ]/g, "");
+    var reversed = reverseString(collapsed_str);
+
+    if (collapsed_str === reversed) {
+      return "true";
+    } else {
+      return "false";
+    }  
+  }
+
   // Takes a string (sentence or paragraph)
   // Returns string with all words capitalized
   function letterCapitalize(str) { 
@@ -56,10 +67,8 @@ PM.Strings = (function() {
   }
 
   // Simple String reversal function using built in JS methods
-  function reverseStringWithMethods(str) {
-    var reversed = str.split("").reverse().join("");
-
-    return reversed;
+  function reverseString(str) {
+    return str.split("").reverse().join("");
   }
 
   // Simple string reversal using a loop
@@ -74,10 +83,11 @@ PM.Strings = (function() {
   }
 
   return {
+    isPalindrome: isPalindrome,
     letterCapitalize: letterCapitalize,
     letterChanges: letterChanges,
-    reverseStringWithLoop: reverseStringWithLoop,
-    reverseStringWithMethods: reverseStringWithMethods
+    reverseString: reverseString,
+    reverseStringWithLoop: reverseStringWithLoop
   };
 })();
 
