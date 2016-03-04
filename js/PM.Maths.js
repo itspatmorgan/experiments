@@ -1,6 +1,18 @@
 var PM = PM || {};
 
 PM.Maths = (function() {
+  function isPrime(num) { 
+    var is_prime = true;
+    var bound = Math.floor(Math.sqrt(num));
+    
+    for (var i = 2; i <= bound; i++) {
+      if (num % i === 0) {
+        is_prime = false;
+      }
+    }
+    
+    return is_prime;
+  }
 
   // Calculate factorial of num (no recursion)
   function simpleFactorial(num) {
